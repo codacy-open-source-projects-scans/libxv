@@ -1,5 +1,5 @@
 '\" t
-.TH XvGetPortAttribute __libmansuffix__ __vendorversion__ "libXv Functions"
+.TH XvGetPortAttribute __libmansuffix__ 2009-10-02 __vendorversion__
 .SH NAME
 XvGetPortAttribute \- return current port attribute value
 .\"
@@ -18,8 +18,9 @@ Specifies the connection to the X server.
 Specifies the port, associated with the given display, for
 which the attribute values are to be returned.
 .IP \fIattribute\fR 12
-An atom that identifies the attribute to be queried by this
-request.  Control atoms are obtained using the XInternAtom
+An atom that identifies the attribute to be queried by this request.
+Control atoms are obtained using the
+.B XInternAtom
 request with a string from the following table.
 .IP \fIp_value\fR 12
 Pointer to the location where the attribute value is written on
@@ -27,12 +28,11 @@ return.
 .\"
 .SH DESCRIPTION
 .\"
-.PP
 .BR XvGetPortAttribute (__libmansuffix__)
 returns the current value of the requested
 port attribute in the integer pointed to by \fIp_value\fR.
 The attribute is identified using an Atom that equates to the attribute name.
-The XInternAtom request can be used with one of the strings
+The \fBXInternAtom\fP request can be used with one of the strings
 below to return a matching Atom.
 .PP
 .TS
@@ -40,7 +40,6 @@ tab(@);
 lfHB lfHB lfHB
 lfR  lfR  lfR .
 _
-.PP
 .sp 4p
 Attribute String@Type@Default
 .sp 6p

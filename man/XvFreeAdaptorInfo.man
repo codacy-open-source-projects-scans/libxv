@@ -1,4 +1,4 @@
-.TH XvFreeAdaptorInfo __libmansuffix__ __vendorversion__ "libXv Functions"
+.TH XvFreeAdaptorInfo __libmansuffix__ 2009-10-02 __vendorversion__
 .SH NAME
 XvFreeAdaptorInfo \- free adaptor information
 .\"

@@ -1,23 +1,23 @@
-.TH Xv __libmansuffix__ __vendorversion__ "libXv Functions"
+.TH Xv __libmansuffix__ 2009-10-03 __vendorversion__
 .\"
 .SH NAME
 Xv \- X Window System video extension
 .SH DESCRIPTION
 The X Video Extension (Xv) extension provides support for video
-adaptors attached to an X display.  It takes the approach that a
-display may have one or more video adaptors, each of which has one or
-more ports through which independent video streams pass.
+adaptors attached to an X display.
+It takes the approach that a display may have one or more video adaptors,
+each of which has one or more ports through which independent video streams pass.
 .PP
 An adaptor may be able to display video in a drawable, capture video
 from a drawable, or both.  It translates between video encoding (NTSC,
-PAL, SECAM, etc...) and drawable format (depth and visual-id pair). An
-adaptor may support multiple video encodings and/or multiple drawable
+PAL, SECAM, etc...) and drawable format (depth and visual-id pair).
+An adaptor may support multiple video encodings and/or multiple drawable
 formats.
 .PP
 Clients use
 .BR Xv (__libmansuffix__)
-to gain access and manage sharing of a display's
-video resources.  Typically, a client will use
+to gain access and manage sharing of a display's video resources.
+Typically, a client will use
 .BR XvQueryExtension (__libmansuffix__)
 to determine the status of the extension,
 .BR XvQueryAdaptors (__libmansuffix__)
@@ -27,9 +27,9 @@ to get a description of what video encodings an adaptor supports.
 .PP
 Once a client has determined what video resources are available, it is
 free to put video into a drawable or get video from a drawable,
-according the capabilities supported.  Clients can select to receive
-events when video activity changes in a drawable and when port
-attributes have changed.
+according the capabilities supported.
+Clients can select to receive events when
+video activity changes in a drawable and when port attributes have changed.
 .PP
 The Xv protocol version 2.2 and later is extended to
 support client images in alternate colorspaces (XvImages).
@@ -47,8 +47,9 @@ or
 .BR XvShmPutImage (__libmansuffix__).
 The Port attributes of the port specified in the Xv(Shm)PutImage
 command will be valid for the image operation when applicable.
-There will be a port encoding with the name "XV_IMAGE".  The width and height
-of that encoding will indicate the maximum source image size.
+There will be a port encoding with the name "XV_IMAGE".
+The width and height of that encoding
+will indicate the maximum source image size.
 .SH SUMMARY OF LIBRARY FUNCTIONS
 The following is a summary of Xv library functions and events:
 .sp 1l

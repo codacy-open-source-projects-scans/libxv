@@ -1,4 +1,4 @@
-.TH XvCreateImage __libmansuffix__ __vendorversion__ "libXv Functions"
+.TH XvCreateImage __libmansuffix__ 2009-10-03 __vendorversion__
 .SH NAME
 XvCreateImage, XvShmCreateImage \- create an XvImage
 .\"
@@ -36,20 +36,22 @@ is similar to
 is similar to
 .BR XShmCreateImage (__libmansuffix__).
 The library will allocate the XvImage structure and fill out all
-fields except for \fIdata\fR.  \fIWidth\fR and \fIheight\fR may be
-enlarged in some YUV formats.  The size of the data buffer that needs
+fields except for \fIdata\fR.
+\fIWidth\fR and \fIheight\fR may be enlarged in some YUV formats.
+The size of the data buffer that needs
 to be allocated will be given in the \fIdata_size\fR field in the XvImage.
-Image data is not allocated by this function.  The client may pass a pointer
-to the preallocated memory as \fIdata\fR or may allocate the memory and fill in
-the XvImage structure's data field after the \fIdata_size\fR field has
-been filled out by the server.  The XvImage structure may be freed by
+Image data is not allocated by this function.
+The client may pass a pointer to the preallocated memory as \fIdata\fR
+or may allocate the memory and fill in the XvImage structure's data field
+after the \fIdata_size\fR field has been filled out by the server.
+The XvImage structure may be freed by
 .BR XFree (__libmansuffix__).
 Shared memory segments are attached/detached with
 .BR XShmAttach (__libmansuffix__)/ XShmDetach (__libmansuffix__).
 .SH RETURN VALUES
 XvImage has the following structure:
+.sp
 .EX
-
 typedef struct {
    int id;
    int width, height;
@@ -60,7 +62,6 @@ typedef struct {
    char *data;
    XPointer obdata;
 } XvImage;
-
 .EE
 .IP \fIid\fR 8
 A descriptor for the format from the XvImageFormatValues structure
@@ -81,8 +82,8 @@ from \fIdata\fR to the start of each plane.
 .IP \fIdata\fR 8
 A pointer to the start of the data buffer.
 .IP \fIobdata\fR 8
-A private field for holding SHM info.  This field will be
-set up by the client libraries so the programmer will
+A private field for holding SHM info.
+This field will be set up by the client libraries so the programmer will
 generally need not be concerned with this field.
 .\"
 .SH DIAGNOSTICS

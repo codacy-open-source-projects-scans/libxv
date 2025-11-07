@@ -1,4 +1,4 @@
-.TH XvSelectPortNotify __libmansuffix__ __vendorversion__ "libXv Functions"
+.TH XvSelectPortNotify __libmansuffix__ 2009-10-02 __vendorversion__
 .SH NAME
 XvSelectPortNotify \- enable or disable XvPortNotify events
 .\"
@@ -13,8 +13,9 @@ XvSelectPortNotify \- enable or disable XvPortNotify events
 .IP \fIdpy\fR 8
 Specifies the connection to the X server.
 .IP \fIport\fR 8
-Specifies the port for which PortNotify events are to be generated
-when its attributes are changed using
+Specifies the port for which
+.B XvPortNotify
+events are to be generated when its attributes are changed using
 .BR XvSetPortAttribute (__libmansuffix__)
 .
 .IP \fIonoff\fR 8
@@ -23,7 +24,9 @@ Specifies whether notification is to be enabled or disabled.
 .SH DESCRIPTION
 .\"
 .BR XvSelectPortNotify (__libmansuffix__)
-enables or disables PortNotify event delivery to the requesting client.
+enables or disables
+.B XvPortNotify
+event delivery to the requesting client.
 .BR XvPortNotify (__libmansuffix__)
 events are generated when port attributes are changed using
 .BR XvSetPortAttribute (__libmansuffix__).

@@ -1,20 +1,18 @@
-.TH XvPortNotify __libmansuffix__  __vendorversion__ "libXv Functions"
+.TH XvPortNotify __libmansuffix__  2003-11-14 __vendorversion__
 .SH NAME
 XvPortNotify \- event generated when port attributes change
 .\"
 .SH SYNOPSIS
 .B #include <X11/extensions/Xvlib.h>
-.br
 .sp 1l
 .EX
-
      typedef union {
        int type;
        XvVideoNotifyEvent xvvideo;
        XvPortNotifyEvent xvport;
        long pad[24];
      } XvEvent;
-
+.sp
      typedef struct {
        int type;
        unsigned long serial;
@@ -25,8 +23,8 @@ XvPortNotify \- event generated when port attributes change
        Atom attribute;
        long value;
      } XvPortNotifyEvent;
-
 .EE
+.sp
 .\"
 .IP \fItype\fR 15
 Specifies the type of event: XvPortNotify.

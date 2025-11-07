@@ -1,4 +1,4 @@
-.TH XvListImageFormats __libmansuffix__ __vendorversion__ "libXv Functions"
+.TH XvListImageFormats __libmansuffix__ 2009-10-03 __vendorversion__
 .SH NAME
 XvListImageFormats \- return list of image formats supported by a video port
 .\"
@@ -20,13 +20,16 @@ A pointer to where the number of formats returned in the array is written.
 .\"
 .SH DESCRIPTION
 .BR XvListImageFormats (__libmansuffix__)
-returns the XvImageFormatValues supported by the specified port. This list
-should be freed with
+returns the
+.B XvImageFormatValues
+supported by the specified port.
+This list should be freed with
 .BR XFree (__libmansuffix__).
 .SH RETURN VALUES
-XvImageFormatValues has the following structure:
+.B XvImageFormatValues
+has the following structure:
+.sp
 .EX
-
     typedef struct {
       int id;                      /* Unique descriptor for the format */
       int type;                    /* XvRGB, XvYUV */
@@ -35,13 +38,13 @@ XvImageFormatValues has the following structure:
       int bits_per_pixel;
       int format;                  /* XvPacked, XvPlanar */
       int num_planes;
-
+.sp
       /* for RGB formats */
       int depth;
       unsigned int red_mask;
       unsigned int green_mask;
       unsigned int blue_mask;
-
+.sp
       /* for YUV formats */
       unsigned int y_sample_bits;
       unsigned int u_sample_bits;
@@ -55,22 +58,26 @@ XvImageFormatValues has the following structure:
       char component_order[32];    /* eg. UYVY */
       int scanline_order;          /* XvTopToBottom, XvBottomToTop */
     } XvImageFormatValues;
-
 .EE
+.sp
 .IP \fIid\fR 8
-A unique descriptor for the format.  This is often the FOURCC
-for the format, when applicable.  This id is used to describe
-the format during XvImage creation.
+A unique descriptor for the format.
+This is often the FOURCC for the format, when applicable.
+This id is used to describe the format during
+.B XvImage
+creation.
 .IP \fItype\fR 8
-XvRGB or XvYUV.
+.BR XvRGB " or " XvYUV .
 .IP \fIbyte_order\fR 8
-The byte order of the image.  It is either LSBFirst or MSBFirst.
+The byte order of the image.
+It is either
+.BR LSBFirst " or " MSBFirst .
 .IP \fIguid\fR 8
-The Globally Unique IDentifier (also known as Universally Unique
-IDentifier).  When not applicable, all characters are NULL.
+The Globally Unique IDentifier (also known as Universally Unique IDentifier).
+When not applicable, all characters are NULL.
 .IP \fIbits_per_pixel\fR 8
-The bits taken up (but not necessarily used) by each
-pixel.  Note that for some planar formats which have
+The bits taken up (but not necessarily used) by each pixel.
+Note that for some planar formats which have
 fractional bits per pixel (such as IF09) this number
 may be rounded _down_.
 .IP \fIformat\fR 8
@@ -91,7 +98,7 @@ Upper case ascii characters representing the order that samples are stored
 within packed formats.
 For planar formats this represents the ordering of the planes.
 .IP \fIscanline_order\fR 8
-XvTopToBottom or XvBottomToTop.
+.BR XvTopToBottom " or " XvBottomToTop .
 .\"
 .SH NOTES
 Since some formats (particularly some planar YUV formats) may not be

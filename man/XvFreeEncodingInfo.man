@@ -1,4 +1,4 @@
-.TH XvFreeEncodingInfo __libmansuffix__ __vendorversion__ "libXv Functions"
+.TH XvFreeEncodingInfo __libmansuffix__ 2009-10-02 __vendorversion__
 .SH NAME
 XvFreeEncodingInfo \- free encoding information
 .\"

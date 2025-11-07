@@ -1,6 +1,6 @@
-.TH XvSelectVideoNotify __libmansuffix__ __vendorversion__ "libXv Functions"
+.TH XvSelectVideoNotify __libmansuffix__ 2009-10-02 __vendorversion__
 .SH NAME
-XvSelectVideoNotify \- enable or disable VideoNotify events
+XvSelectVideoNotify \- enable or disable XvVideoNotify events
 .\"
 .SH SYNOPSIS
 .B #include <X11/extensions/Xvlib.h>
@@ -39,4 +39,3 @@ Generated if the requested drawable does not exist.
 .SH SEE ALSO
 .\"
 .BR XvVideoNotify (__libmansuffix__)
-

@@ -1,5 +1,5 @@
 '\" t
-.TH XvSetPortAttribute __libmansuffix__  __vendorversion__ "libXv Functions"
+.TH XvSetPortAttribute __libmansuffix__  2009-10-03 __vendorversion__
 .SH NAME
 XvSetPortAttribute \- sets an attribute of a video port
 .\"
@@ -18,15 +18,15 @@ Specifies the connection to the X server.
 Specifies the port for which the attribute is to be used.
 .IP \fIattribute\fR 15
 Identifies the port attribute to be set by this request.
-Can be one of the table entries under the column "String," below.
+Can be one of the table entries under the column "String" below.
 .IP \fIvalue\fR 15
 Identifies the value to which \fIattribute\fP is to be set.
-Can be one of the table entries under the column "Type," below.
+Can be one of the table entries under the column "Type" below.
 .\"
 .SH DESCRIPTION
 .BR XvSetPortAttribute (__libmansuffix__)
- permits a client to set the port attribute
-to specified values.  This request supports the following values:
+permits a client to set the port attribute to specified values.
+This request supports the following values:
 .PP
 .TS
 tab(@);
@@ -48,11 +48,14 @@ _
 .TE
 .PP
 The supplied encoding must be one of the encodings listed for the
-adaptor, otherwise an Encoding error results.
+adaptor, otherwise an
+.B Encoding
+error results.
 .PP
 If the adaptor does not support the exact hue, saturation,
 brightness, and contrast levels supplied, the closest levels
-supported are assumed.  Use
+supported are assumed.
+Use
 .BR XvGetPortAttribute (__libmansuffix__)
 to query the resulting levels.
 .PP

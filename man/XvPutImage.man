@@ -1,4 +1,4 @@
-.TH XvPutImage __libmansuffix__ __vendorversion__ "libXv Functions"
+.TH XvPutImage __libmansuffix__ 2009-10-03 __vendorversion__
 .SH NAME
 XvPutImage, XvShmPutImage \- display an XvImage
 .\"
@@ -27,7 +27,8 @@ XvPutImage, XvShmPutImage \- display an XvImage
 Specifies the connection to the X server.
 .IP \fIport\fR 8
 The port id of a port on an XvImage capable adaptor.
-.IP \fId - The target drawable.
+.IP \fId\fR 8
+The target drawable.
 .IP \fIgc\fR 8
 the graphics context specifying the clip mask to use, if any.
 .IP \fIimage\fR 8
@@ -37,8 +38,12 @@ The portion of the XvImage to be displayed.
 .IP \fIdest_?\fR 8
 The portion of the destination drawable to be filled by the image.
 .IP \fIsend_event\fR 8
-Indicates whether or not an XShmCompletionEvent should be sent.  If
-sent, the event's major_code and minor_code fields will indicate the
+Indicates whether or not an
+.B XShmCompletionEvent
+should be sent.
+If sent, the event's
+.IR major_code " and " minor_code
+fields will indicate the
 Xv extension's major code and XvShmPutImage's minor code.
 .\"
 .SH DESCRIPTION
@@ -49,13 +54,15 @@ is similar to
 is similar to
 .BR XShmPutImage (__libmansuffix__).
 The library will allocate the XvImage structure and fill out all
-fields except for \fIdata\fR.  \fIWidth\fR and \fIheight\fR may be
-enlarged in some YUV formats.  The size of the data buffer that needs
-to be allocated will be given in the \fIdata_size\fR field in the XvImage.
-Image data is not allocated by this function.  The client may pass a pointer
-to the preallocated memory as \fIdata\fR or may allocate the memory and fill in
-the XvImage structure's data field after the \fIdata_size\fR field has
-been filled out by the server.  The XvImage structure may be freed by
+fields except for \fIdata\fR.
+\fIWidth\fR and \fIheight\fR may be enlarged in some YUV formats.
+The size of the data buffer that needs to be allocated will be given in
+the \fIdata_size\fR field in the XvImage.
+Image data is not allocated by this function.
+The client may pass a pointer to the preallocated memory as \fIdata\fR or
+may allocate the memory and fill in the \fBXvImage\fP structure's data field
+after the \fIdata_size\fR field has been filled out by the server.
+The \fBXvImage\fP structure may be freed by
 .BR XFree (__libmansuffix__).
 .SH DIAGNOSTICS
 .IP [XvBadPort] 8

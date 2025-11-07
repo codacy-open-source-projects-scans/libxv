@@ -1,4 +1,4 @@
-.TH XvStopVideo __libmansuffix__ __vendorversion__ "libXv Functions"
+.TH XvStopVideo __libmansuffix__ 2009-10-02 __vendorversion__
 .SH NAME
 XvStopVideo \- stop active video
 .\"
@@ -19,11 +19,15 @@ Specifies the drawable associated with the named port.
 .SH DESCRIPTION
 .\"
 .BR XvStopVideo (__libmansuffix__)
-stops active video for the specified port and drawable.  If the port
-is not processing video, or if it is processing video in a different
-drawable, the request is ignored.  When video is stopped a
+stops active video for the specified port and drawable.
+If the port is not processing video,
+or if it is processing video in a different drawable,
+the request is ignored.
+When video is stopped a
 .BR XvVideoNotify (__libmansuffix__)
-event with detail XvStopped is generated for the associated drawable.
+event with detail
+.B XvStopped
+is generated for the associated drawable.
 .\"
 .SH RETURN VALUES
 .IP [Success] 8

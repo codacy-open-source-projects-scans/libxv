@@ -1,4 +1,4 @@
-.TH XvQueryExtension __libmansuffix__ __vendorversion__ "libXv Functions"
+.TH XvQueryExtension __libmansuffix__ 2011-10-05 __vendorversion__
 .SH NAME
 XvQueryExtension \- return version and release of extension
 .\"
@@ -23,18 +23,18 @@ is written.
 Pointer to where the revision number of the \fIXv\fP video extension
 is written.
 .IP \fIp_request_base\fR 15
-Pointer to where the extension major request number is returned
+Pointer to where the extension major request number is returned.
 .IP \fIp_event_base\fR 15
-Pointer to where the extension event base is returned
+Pointer to where the extension event base is returned.
 .IP \fIp_error_base\fR 15
-Pointer to where the extension error base is returned
+Pointer to where the extension error base is returned.
 .\"
 .SH DESCRIPTION
 .\"
-.PP
 .BR XvQueryExtension (__libmansuffix__)
 returns the version and release numbers for the Xv video extension
-currently loaded on the system.  The extension major request number,
+currently loaded on the system.
+The extension major request number,
 event base, and error base are also returned.
 .\"
 .SH RETURN VALUES

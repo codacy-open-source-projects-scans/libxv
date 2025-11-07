@@ -1,4 +1,4 @@
-.TH XvQueryAdaptors __libmansuffix__  __vendorversion__ "libXv Functions"
+.TH XvQueryAdaptors __libmansuffix__  2009-10-03 __vendorversion__
 .SH NAME
 XvQueryAdaptors \- return adaptor information for a screen
 .\"
@@ -27,11 +27,13 @@ returned.
 .SH DESCRIPTION
 .\"
 .BR XvQueryAdaptors (__libmansuffix__)
- returns an video adaptor information for
-the screen of the specified drawable.  The XvAdaptorInfo structure
-has the following organization:
+returns an video adaptor information for
+the screen of the specified drawable.
+The
+.B XvAdaptorInfo
+structure has the following organization:
+.sp
 .EX
-
      typedef struct {
        XvPortID base_id;
        unsigned long num_ports;
@@ -41,34 +43,45 @@ has the following organization:
        XvFormat *formats;
        unsigned long num_adaptors;
      } XvAdaptorInfo;
-
 .EE
+.sp
 .IP \fIbase_id\fR 8
 The resource ID of the first adaptor port.
 .IP \fInum_ports\fR 8
 The number of ports supported by the adaptor.
 .IP \fItype\fR 8
-A bit mask with the value XvInputMask asserted if the adaptor supports video
-input, and value XvOutputMask asserted if the adaptor supports video output.
-In Xv protocol 2.2 and later, there are 3 new bits defined - XvVideoMask,
-XvStillMask and XvImageMask indicating that the adaptor is capable
-of video, still or image primitives respectively.
+A bit mask with the value
+.B XvInputMask
+asserted if the adaptor supports video input, and value
+.B XvOutputMask
+asserted if the adaptor supports video output.
+In Xv protocol 2.2 and later, there are 3 new bits defined:
+.BR XvVideoMask ,
+.BR XvStillMask ,
+and
+.BR XvImageMask ;
+indicating that the adaptor is capable of
+video, still, or image primitives respectively.
 .IP \fIname\fR 8
 A vendor specific name that identifies the adaptor.
 .IP \fInum_formats\fR 8
 The number of depth/visual id formats supported by the adaptor.
 .IP \fIformats\fR 8
-A pointer to an array of XvFormat structures.
+A pointer to an array of
+.B XvFormat
+structures.
 .PP
-The XvFormat structure has the following organization:
+The
+.B XvFormat
+structure has the following organization:
+.sp
 .EX
-
      typedef struct {
        char depth;
        unsigned long visual_id;
      } XvFormat;
-
 .EE
+.sp
 .IP \fIdepth\fR 8
 A drawable depth supported by the adaptor.
 .IP \fIvisual_id\fR 8

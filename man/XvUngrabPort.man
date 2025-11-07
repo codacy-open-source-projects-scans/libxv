@@ -1,4 +1,4 @@
-.TH XvUngrabPort __libmansuffix__ __vendorversion__ "libXv Functions"
+.TH XvUngrabPort __libmansuffix__ 2009-10-02 __vendorversion__
 .SH NAME
 XvUngrabPort \- release port grabbed for video operation
 .\"
@@ -13,14 +13,15 @@ XvUngrabPort \- release port grabbed for video operation
 .IP \fIdpy\fR 8
 Specifies the connection to the X server.
 .IP \fIport\fR 8
-Specifies the port to be released.  If the port had not been
-previously grabbed, the request is ignored.
+Specifies the port to be released.
+If the port had not been previously grabbed, the request is ignored.
 .IP \fItime\fR 8
 Specifies the request timestamp.
 .\"
 .SH DESCRIPTION
 .BR XvUngrabPort (__libmansuffix__)
- releases a grabbed port.  If \fItime\fR specifies a time before the last
+releases a grabbed port.
+If \fItime\fR specifies a time before the last
 .BR XvGrabPort (__libmansuffix__)
 was executed, the request is ignored.
 .\"

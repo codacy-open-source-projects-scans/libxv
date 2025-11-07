@@ -1,4 +1,4 @@
-.TH XvGrabPort __libmansuffix__ __vendorversion__ "libXv Functions"
+.TH XvGrabPort __libmansuffix__ 2009-10-02 __vendorversion__
 .SH NAME
 XvGrabPort \- lock port for exclusive use by client
 .\"
@@ -20,14 +20,20 @@ Specifies the request timestamp.
 .SH DESCRIPTION
 .\"
 .BR XvGrabPort (__libmansuffix__)
-grabs a port.  Once a client grabs a port, only that client can make video
-requests to that port.
+grabs a port.
+Once a client grabs a port,
+only that client can make video requests to that port.
 .PP
-If the time is before the current port time, the XvGrabPort request is
-ignored and XvInvalidTime is returned.  If the port is already grabbed by
-another client, XvAlreadyGrabbed is returned. Otherwise it returns a
-status of \fISuccess\fR.  The port time is updated when the following
-requests are processed:
+If the time is before the current port time, the
+.B XvGrabPort
+request is ignored and
+.B XvInvalidTime
+is returned.
+If the port is already grabbed by another client,
+.B XvAlreadyGrabbed
+is returned.
+Otherwise it returns a status of \fISuccess\fR.
+The port time is updated when the following requests are processed:
 .BR XvGrabPort (__libmansuffix__),
 .BR XvUngrabPort (__libmansuffix__),
 .BR XvPutVideo (__libmansuffix__),
@@ -36,7 +42,10 @@ requests are processed:
 .BR XvGetStill (__libmansuffix__).
 .PP
 If the port is actively processing video for another client, the
-video is preempted, and an XvVideoNotify event with detail XvPreempted
+video is preempted, and an
+.B XvVideoNotify
+event with detail
+.B XvPreempted
 is generated for its drawable.
 .\"
 .SH RETURN VALUES
@@ -62,4 +71,3 @@ Generated if the requested port does not exist.
 .\"
 .BR XvUngrabPort (__libmansuffix__),
 .BR XvVideoNotify (__libmansuffix__)
-

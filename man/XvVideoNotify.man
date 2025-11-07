@@ -1,20 +1,18 @@
-.TH XvVideoNotify __libmansuffix__  __vendorversion__ "libXv Functions"
+.TH XvVideoNotify __libmansuffix__  2003-11-14 __vendorversion__
 .SH NAME
 XvVideoNotify \- event generated for video processing
 .\"
 .SH SYNOPSIS
 .B #include <X11/extensions/Xvlib.h>
-.br
 .sp 1l
 .EX
-
      typedef union {
        int type;
        XvVideoNotifyEvent xvvideo;
        XvPortNotifyEvent xvport;
        long pad[24];
      } XvEvent;
-
+.sp
      typedef struct {
        int type;
        unsigned long serial;
@@ -25,8 +23,8 @@ XvVideoNotify \- event generated for video processing
        XvPortID port_id;
        Time time;
      } XvVideoNotifyEvent;
-
 .EE
+.sp
 .\"
 .IP \fItype\fR 8
 Specifies the type of event:
@@ -48,10 +46,10 @@ The port processing the video for which the event was generated.
 .SH DESCRIPTION
 .\"
 .B XvVideoNotify
-events are generated when video is started, stopped, preempted by
-another video request, ignored because the port is grabbed by another
-client, or interrupted because of a hard transmission or reception
-error.
+events are generated when video is started, stopped,
+preempted by another video request,
+ignored because the port is grabbed by another client,
+or interrupted because of a hard transmission or reception error.
 .\"
 .SH SEE ALSO
 .BR XvPutVideo (__libmansuffix__),

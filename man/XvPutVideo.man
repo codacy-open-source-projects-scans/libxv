@@ -1,4 +1,4 @@
-.TH XvPutVideo __libmansuffix__  __vendorversion__ "libXv Functions"
+.TH XvPutVideo __libmansuffix__  2009-10-02 __vendorversion__
 .SH NAME
 XvPutVideo \- write video into a drawable
 .\"
@@ -27,9 +27,10 @@ GC components are:
 and
 .IR clip-mask .
 .IP \fIvx,vy,vw,vh\fR 15
-Define the size and location of the source (video) region
-to be written.  \fIvx\fP and \fIvy\fP define the
-upper-left pixel of the region. \fIvw\fP and \fIvh\fP
+Define the size and location of the source (video) region to be written.
+.IR vx " and " vy
+define the upper-left pixel of the region.
+.IR vw " and " vh
 define the width and height, in pixels, of the region.
 .IP \fIdx,dy,dw,dh\fR 15
 Define the location and size of the destination (drawable) region
@@ -52,8 +53,7 @@ The position and size of the source (video) rectangle is specified by
 .IR vw ,
 and
 .IR vh .
-The position and size of the destination (drawable)
-rectangle is specified by
+The position and size of the destination (drawable) rectangle is specified by
 .IR dx ,
 .IR dy ,
 .IR dw ,
@@ -64,15 +64,28 @@ Video data is clipped to the bounds of the video encoding, scaled to the
 requested drawable region size (or the closest size supported) and
 clipped to the bounds of the drawable.
 .PP
-If video is successfully initiated, an XvVideoNotify event with detail
-XvStarted is generated for the drawable.  If the port is already in
-use, its video is preempted, and if the new drawable is different than
-the old, an XvVideoNotify event with detail XvPreempted is generated
-for the old drawable.  If the port is grabbed by another client, this
-request is ignored, and an XvVideoNotify event with detail XvBusy is
-generated for the drawable. If the port is not receiving a valid video
-signal or if the video signal is interrupted while video is active a
-VideoNotify event with detail XvHardError is generated for the drawable.
+If video is successfully initiated, an
+.B XvVideoNotify
+event with detail
+.B XvStarted
+is generated for the drawable.
+If the port is already in use, its video is preempted,
+and if the new drawable is different than the old, an
+.B XvVideoNotify
+event with detail
+.B XvPreempted
+is generated for the old drawable.
+If the port is grabbed by another client, this request is ignored, and an
+.B XvVideoNotify
+event with detail
+.B XvBusy
+is generated for the drawable.
+If the port is not receiving a valid video signal or
+if the video signal is interrupted while video is active a
+.B XvVideoNotify
+event with detail
+.B XvHardError
+is generated for the drawable.
 .\"
 .SH RETURN VALUES
 .IP [Success] 8
